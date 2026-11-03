@@ -1,0 +1,3 @@
+/* Netlify redirects configuration */
+/* Enables clean client-side routing on Netlify */
+/*    /index.html   200

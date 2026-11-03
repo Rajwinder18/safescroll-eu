@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Safe Scroll | EU Youth Social Media & Safety Guide</title>
+  <meta name="description" content="A clean, simple guide explaining how the European Union protects children under 15 on social media and smartphones." />
+
+  <!-- Local Vendor Scripts -->
+  <script src="vendor/react.js"></script>
+  <script src="vendor/react-dom.js"></script>
+  <script src="vendor/babel.js"></script>
+  <script src="vendor/tailwind.js"></script>
+  <script src="vendor/lucide.js"></script>
+  <script src="vendor/chartjs.js"></script>
+  <script src="vendor/canvas-confetti.js"></script>
+  <script src="data.js"></script>
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            // Clean, neutral colors (no harsh darks or neon gradients)
+            slate: {
+              50: '#F8FAFC',
+              100: '#F1F5F9',
+              200: '#E2E8F0',
+              300: '#CBD5E1',
+              400: '#94A3B8',
+              500: '#64748B',
+              600: '#475569',
+              700: '#334155',
+              800: '#1E293B',
+              900: '#0F172A',
+            },
+            // Simple Purple
+            purple: {
+              50: '#FAF5FF',
+              100: '#F3E8FF',
+              200: '#E9D5FF',
+              500: '#8B5CF6',
+              600: '#7C3AED',
+              700: '#6D28D9',
+            },
+            // Simple Blue & Light Blue
+            sky: {
+              50: '#F0F9FF',
+              100: '#E0F2FE',
+              200: '#BAE6FD',
+              500: '#0EA5E9',
+              600: '#0284C7',
+            },
+            blue: {
+              50: '#EFF6FF',
+              100: '#DBEAFE',
+              200: '#BFDBFE',
+              500: '#3B82F6',
+              600: '#2563EB',
+              700: '#1D4ED8',
+            },
+            // Simple Pink / Rose
+            pink: {
+              50: '#FDF2F8',
+              100: '#FCE7F3',
+              200: '#FBCFE8',
+              500: '#EC4899',
+              600: '#DB2777',
+            },
+            // Mint / Green
+            emerald: {
+              50: '#ECFDF5',
+              100: '#D1FAE5',
+              200: '#A7F3D0',
+              500: '#10B981',
+              600: '#059669',
+            }
+          },
+          fontFamily: {
+            sans: ['-apple-system', 'BlinkMacSystemFont', '"Segoe UI"', 'Roboto', 'Helvetica', 'Arial', 'sans-serif'],
+          }
+        }
+      }
+    };
+  </script>
+
+  <style>
+    /* Clean, human styling: soft borders, clean whites, neutral backgrounds */
+    body {
+      background-color: #F8FAFC;
+      color: #1E293B;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+    .card-clean {
+      background-color: #FFFFFF;
+      border: 1px solid #E2E8F0;
+      box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.05);
+    }
+  </style>
+</head>
+<body class="bg-slate-50 text-slate-800 antialiased min-h-screen">
+  <div id="root"></div>
+
+  <!-- Application Component -->
+  <script type="text/babel" src="app.jsx"></script>
+</body>
+</html>
