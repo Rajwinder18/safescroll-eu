@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Safe Scroll | EU Youth Social Media & Safety Guide</title>
+  <meta name="description" content="A clean, simple guide explaining how the European Union protects children under 15 on social media and smartphones." />
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            // Clean, neutral colors (no harsh darks or neon gradients)
+            slate: {
+              50: '#F8FAFC',
+              100: '#F1F5F9',
+              200: '#E2E8F0',
+              300: '#CBD5E1',
+              400: '#94A3B8',
+              500: '#64748B',
+              600: '#475569',
+              700: '#334155',
+              800: '#1E293B',
+              900: '#0F172A',
+            },
+            // Simple Purple
+            purple: {
+              50: '#FAF5FF',
+              100: '#F3E8FF',
+              200: '#E9D5FF',
+              500: '#8B5CF6',
+              600: '#7C3AED',
+              700: '#6D28D9',
+            },
+            // Simple Blue & Light Blue
+            sky: {
+              50: '#F0F9FF',
+              100: '#E0F2FE',
+              200: '#BAE6FD',
+              500: '#0EA5E9',
+              600: '#0284C7',
+            },
+            blue: {
+              50: '#EFF6FF',
+              100: '#DBEAFE',
+              200: '#BFDBFE',
+              500: '#3B82F6',
+              600: '#2563EB',
+              700: '#1D4ED8',
+            },
+            // Simple Pink / Rose
+            pink: {
+              50: '#FDF2F8',
+              100: '#FCE7F3',
+              200: '#FBCFE8',
+              500: '#EC4899',
+              600: '#DB2777',
+            },
+            // Mint / Green
+            emerald: {
+              50: '#ECFDF5',
+              100: '#D1FAE5',
+              200: '#A7F3D0',
+              500: '#10B981',
+              600: '#059669',
+            }
+          },
+          fontFamily: {
+            sans: ['-apple-system', 'BlinkMacSystemFont', '"Segoe UI"', 'Roboto', 'Helvetica', 'Arial', 'sans-serif'],
+          }
+        }
+      }
+    };
+  </script>
+
+  <style>
+    /* Clean, human styling: soft borders, clean whites, neutral backgrounds */
+    body {
+      background-color: #F8FAFC;
+      color: #1E293B;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+    .card-clean {
+      background-color: #FFFFFF;
+      border: 1px solid #E2E8F0;
+      box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.05);
+    }
+    .dashboard-3d-shell {
+      position: relative;
+      overflow: hidden;
+      border: 1px solid rgba(167, 139, 250, 0.35);
+      background:
+        radial-gradient(circle at 85% 20%, rgba(196, 181, 253, 0.72), transparent 34%),
+        linear-gradient(120deg, #F5F3FF 0%, #EDE9FE 46%, #E0F2FE 100%);
+      box-shadow: 0 16px 36px rgba(109, 40, 217, 0.12);
+    }
+    .dashboard-3d-stage {
+      position: relative;
+      width: 190px;
+      height: 170px;
+      flex: 0 0 190px;
+      display: grid;
+      place-items: center;
+      perspective: 700px;
+    }
+    .dashboard-3d-globe {
+      position: relative;
+      z-index: 2;
+      width: 118px;
+      height: 118px;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      transform: rotateX(10deg) rotateY(-16deg);
+      background: linear-gradient(145deg, #A78BFA 5%, #7C3AED 52%, #4338CA 100%);
+      box-shadow: inset -18px -18px 28px rgba(30, 27, 75, 0.35), inset 12px 10px 20px rgba(255, 255, 255, 0.32), 0 18px 24px rgba(67, 56, 202, 0.3);
+      transition: transform 180ms ease, box-shadow 180ms ease;
+    }
+    .dashboard-3d-globe:hover {
+      transform: rotateX(10deg) rotateY(-16deg) translateY(-4px) scale(1.04);
+      box-shadow: inset -18px -18px 28px rgba(30, 27, 75, 0.35), inset 12px 10px 20px rgba(255, 255, 255, 0.32), 0 24px 30px rgba(67, 56, 202, 0.35);
+    }
+    .dashboard-3d-globe-highlight {
+      position: absolute;
+      top: 13px;
+      left: 19px;
+      width: 35px;
+      height: 18px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.4);
+      filter: blur(5px);
+      transform: rotate(-24deg);
+    }
+    .dashboard-3d-orbit {
+      position: absolute;
+      z-index: 1;
+      width: 174px;
+      height: 58px;
+      border: 1px solid rgba(124, 58, 237, 0.35);
+      border-radius: 50%;
+      transform: rotateX(68deg) rotateZ(-20deg);
+    }
+    .dashboard-3d-orbit-one {
+      animation: dashboard-orbit 8s linear infinite;
+    }
+    .dashboard-3d-orbit-two {
+      width: 150px;
+      height: 48px;
+      border-color: rgba(14, 165, 233, 0.3);
+      transform: rotateX(68deg) rotateZ(42deg);
+      animation: dashboard-orbit-reverse 10s linear infinite;
+    }
+    .dashboard-3d-shadow {
+      position: absolute;
+      bottom: 10px;
+      width: 104px;
+      height: 15px;
+      border-radius: 50%;
+      background: rgba(67, 56, 202, 0.2);
+      filter: blur(7px);
+    }
+    @keyframes dashboard-orbit {
+      from { transform: rotateX(68deg) rotateZ(-20deg); }
+      to { transform: rotateX(68deg) rotateZ(340deg); }
+    }
+    @keyframes dashboard-orbit-reverse {
+      from { transform: rotateX(68deg) rotateZ(42deg); }
+      to { transform: rotateX(68deg) rotateZ(-318deg); }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .dashboard-3d-orbit-one,
+      .dashboard-3d-orbit-two {
+        animation: none;
+      }
+      .dashboard-3d-globe {
+        transition: none;
+      }
+    }
+    @media (max-width: 640px) {
+      .dashboard-3d-stage {
+        width: 100%;
+        height: 145px;
+        flex-basis: auto;
+      }
+    }
+  </style>
+</head>
+<body class="bg-slate-50 text-slate-800 antialiased min-h-screen">
+  <div id="root"></div>
+
+  <script type="module" src="/src/main.jsx"></script>
+</body>
+</html>
