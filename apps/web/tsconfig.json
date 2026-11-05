@@ -1,0 +1,29 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "useDefineForClassFields": true,
+    "lib": ["ES2022", "DOM", "DOM.Iterable"],
+    "module": "ESNext",
+    "skipLibCheck": true,
+    "moduleResolution": "Bundler",
+    "allowImportingTsExtensions": true,
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "noEmit": true,
+    "jsx": "react-jsx",
+    "strict": true,
+    "noUnusedLocals": false,
+    "noUnusedParameters": false,
+    "noFallthroughCasesInSwitch": true,
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["src/*"],
+      "@safescroll/shared-types": ["../../packages/shared-types/src"],
+      "@safescroll/wellbeing-engine": ["../../packages/wellbeing-engine/src"],
+      "@safescroll/validation": ["../../packages/validation/src"],
+      "@safescroll/api-client": ["../../packages/api-client/src"],
+      "@safescroll/policy-content": ["../../packages/policy-content/src"]
+    }
+  },
+  "include": ["src"]
+}

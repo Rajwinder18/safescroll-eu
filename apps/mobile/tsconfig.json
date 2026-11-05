@@ -1,0 +1,13 @@
+{
+  "extends": "expo/tsconfig.base",
+  "compilerOptions": {
+    "strict": true,
+    "paths": {
+      "@safescroll/shared-types": ["../../packages/shared-types/src"],
+      "@safescroll/wellbeing-engine": ["../../packages/wellbeing-engine/src"],
+      "@safescroll/api-client": ["../../packages/api-client/src"],
+      "@safescroll/policy-content": ["../../packages/policy-content/src"]
+    }
+  },
+  "include": ["**/*.ts", "**/*.tsx", ".expo/types/**/*.ts", "expo-env.d.ts"]
+}

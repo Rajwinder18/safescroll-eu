@@ -1,24 +1,23 @@
 {
   "name": "safescroll",
   "private": true,
-  "version": "1.0.0",
+  "version": "2.0.0",
   "type": "module",
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
   "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-    "preview": "vite preview",
-    "test": "vitest run"
+    "dev": "npm run dev -w @safescroll/web",
+    "dev:web": "npm run dev -w @safescroll/web",
+    "dev:mobile": "npm run start -w @safescroll/mobile",
+    "build": "npm run build -w @safescroll/web",
+    "build:web": "npm run build -w @safescroll/web",
+    "preview": "npm run preview -w @safescroll/web",
+    "test": "npm run test -w @safescroll/wellbeing-engine --if-present && npm run test -w @safescroll/web --if-present",
+    "typecheck": "npm run typecheck -w @safescroll/web --if-present"
   },
-  "dependencies": {
-    "@supabase/supabase-js": "^2.119.0",
-    "canvas-confetti": "^1.9.3",
-    "chart.js": "^4.4.7",
-    "lucide": "^0.468.0",
-    "react": "^18.3.1",
-    "react-dom": "^18.3.1"
-  },
-  "devDependencies": {
-    "vite": "^6.0.5",
-    "vitest": "^2.1.8"
+  "engines": {
+    "node": ">=18"
   }
 }

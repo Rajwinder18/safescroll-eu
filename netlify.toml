@@ -1,11 +1,8 @@
 [build]
-  command = "npm run build"
-  publish = "dist"
+  command = "npm install && npm run build -w @safescroll/web"
+  publish = "apps/web/dist"
 
-[[headers]]
-  for = "/*"
-  [headers.values]
-    X-Frame-Options = "DENY"
-    X-XSS-Protection = "1; mode=block"
-    X-Content-Type-Options = "nosniff"
-    Referrer-Policy = "strict-origin-when-cross-origin"
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200

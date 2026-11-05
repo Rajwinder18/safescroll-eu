@@ -1,0 +1,25 @@
+{
+  "expo": {
+    "name": "Safe Scroll",
+    "slug": "safescroll",
+    "version": "2.0.0",
+    "orientation": "portrait",
+    "scheme": "safescroll",
+    "userInterfaceStyle": "automatic",
+    "newArchEnabled": true,
+    "plugins": ["expo-router"],
+    "experiments": {
+      "typedRoutes": true
+    },
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.safescroll.app"
+    },
+    "android": {
+      "adaptiveIcon": {
+        "backgroundColor": "#6366F1"
+      },
+      "package": "com.safescroll.app"
+    }
+  }
+}
